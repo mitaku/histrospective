@@ -15,31 +15,55 @@
     %link(href="images/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114")
 
   %body
-    .navbar.navbar-fixed-top
-      .navbar-inner
-        .container
-          %a.btn.btn-navbar(data-target=".nav-collapse" data-toggle="collapse")
-            %span.icon-bar
-            %span.icon-bar
-            %span.icon-bar
-          %a.brand(href="#") Histrospective
-          .container.nav-collapse
-            %ul.nav
-              %li= link_to "Link 1", "/path1"
-              %li= link_to "Link 2", "/path2"
-              %li= link_to "Link 3", "/path3"
+    #wrapper
+      .navbar.navbar-fixed-top
+        .navbar-inner
+          .container
+            %a.btn.btn-navbar(data-target=".nav-collapse" data-toggle="collapse")
+              %span.icon-bar
+              %span.icon-bar
+              %span.icon-bar
+            %a.brand(href="#") Histrospective
+            .container.nav-collapse
+              %ul.nav
+                %li= link_to "Link 1", "/path1"
+                %li= link_to "Link 2", "/path2"
+                %li= link_to "Link 3", "/path3"
 
-    .container
+      #container
+        .timeline_wrapper.clearfix
+          .timeline_container
+            .timeline
+          .item
+            %div
+              %h1 About
+              .event_at= time_tag Date.today
+              %p
+                Histrospective is a timeline viewer similar to Facebook.
+          .item
+            %div
+              %h1 Reference
+              .event_at= time_tag Date.yesterday
+              %p
+                %ul
+                  %li= link_to "Facebook Timeline Design using JQuery and CSS.", "http://www.9lessons.info/2012/01/facebook-timeline-design-using-jquery.html"
+          .item
+            %div
+              %h1 Application
+              .event_at= time_tag Date.yesterday
+              %p
+                %ul
+                  %li Ruby 1.9.3
+                  %li Rails 3.2.3
+                  %li jQuery
+                  %li CoffeeScript
+                  %li Haml
+                  %li Twitter Bootstrap
+                = image_tag "rails.png"
 
-      .content
-        .row
-          .span2.left
-          .span8
-            = yield
-          .span2.right
-
+    #footer
       %footer
-        %p &copy; Company 2012
+        %p &copy; Takumi MIURA 2012
     /
       Javascripts
       \==================================================

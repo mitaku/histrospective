@@ -1,0 +1,21 @@
+# Place all the behaviors and hooks related to the matching controller here.
+# All this logic will automatically be available in application.js.
+# You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
+#
+
+$ ->
+  Arrow_Points = ->
+    s = $('#container').find('.item')
+    $.each s, (i, obj) =>
+      posLeft = $(obj).css("left")
+      $(obj).addClass('borderclass')
+      if posLeft is "0px"
+        html = "<span class='rightCorner'></span>"
+        $(obj).prepend(html)
+      else
+        html = "<span class='leftCorner'></span>"
+        $(obj).prepend(html)
+
+  $('#container').masonry({itemSelector : '.item',})
+  Arrow_Points();
+
